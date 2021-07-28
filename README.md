@@ -1,4 +1,4 @@
-# food_order_app_ui
+# food_ordering_app_ui
 
 A new Flutter project.
 
