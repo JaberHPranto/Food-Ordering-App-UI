@@ -391,7 +391,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("Sushi Dan", "hotel1")
+                placesWidget("Sushi Dan", "hotel1"),
+                placesWidget("Hatsuana Sushi", "hotel2"),
+                placesWidget("Sushi Maki", "hotel3"),
               ],
             ),
           ),
