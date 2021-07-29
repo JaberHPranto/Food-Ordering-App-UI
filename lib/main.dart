@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:food_order_app_ui/Style.dart';
 
+import 'hotelPage.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -363,12 +365,119 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Places",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      height: 0.5,
+                      color: Colors.grey,
+                    ))
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                placesWidget("Sushi Dan", "hotel1")
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  Row placesWidget(String name, String image) {
+    return Row(
+      children: [
+        Container(
+          height: 100,
+          width: 100,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('asset/images/$image.png'))),
+        ),
+        Expanded(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "$name",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.star,
+                  color: Colors.orange,
+                  size: 18,
+                ),
+                Icon(
+                  Icons.star,
+                  color: Colors.orange,
+                  size: 18,
+                ),
+                Icon(
+                  Icons.star,
+                  color: Colors.orange,
+                  size: 18,
+                ),
+                Icon(
+                  Icons.star,
+                  color: Colors.orange,
+                  size: 18,
+                ),
+                Icon(
+                  Icons.star,
+                  color: Colors.orange,
+                  size: 18,
+                )
+              ],
+            ),
+            Text(
+              "Best place for getting quality food at a good price",
+              style:
+                  TextStyle(color: Colors.black.withOpacity(0.7), fontSize: 11),
+            )
+          ],
+        )),
+        InkWell(
+          onTap: () {
+            openHotelPage();
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            decoration: BoxDecoration(
+                color: greenBtn,
+                borderRadius: BorderRadius.all(Radius.circular(40))),
+            child: Text(
+              "Order now",
+              style: TextStyle(fontSize: 12, color: Colors.white),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  void openHotelPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HotelPage()));
   }
 }
