@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_app_ui/Style.dart';
+import 'package:food_order_app_ui/cartPage.dart';
 
 class HotelPage extends StatelessWidget {
   @override
@@ -240,7 +241,9 @@ class __HotelHomePageState extends State<_HotelHomePage> {
                   Column(
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          openCartPage();
+                        },
                         child: Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 25, vertical: 10),
@@ -431,5 +434,10 @@ class __HotelHomePageState extends State<_HotelHomePage> {
         )
       ],
     );
+  }
+
+  void openCartPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => CartPage()));
   }
 }
