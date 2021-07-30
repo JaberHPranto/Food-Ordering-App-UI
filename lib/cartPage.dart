@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:food_order_app_ui/hotelPage.dart';
-import 'package:food_order_app_ui/paymentSuccessPage.dart';
+import 'package:food_order_app_ui/paymentPage.dart';
 
 import 'Style.dart';
 
@@ -309,7 +309,7 @@ class __MyCartPageState extends State<_MyCartPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PaymentSuccessPage()));
+                                builder: (context) => PaymentPage()));
                       },
                       child: Container(
                         padding:
