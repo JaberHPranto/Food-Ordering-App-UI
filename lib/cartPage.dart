@@ -345,6 +345,9 @@ class __MyCartPageState extends State<_MyCartPage> {
               image: DecorationImage(
                   image: AssetImage('asset/images/$image.png'))),
         ),
+        SizedBox(
+          width: 7,
+        ),
         Expanded(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -386,24 +389,35 @@ class __MyCartPageState extends State<_MyCartPage> {
               ],
             ),
             Text(
-              "Best place for getting quality food at a good price",
+              "Best place for getting good quality food at a good price",
               style:
                   TextStyle(color: Colors.black.withOpacity(0.7), fontSize: 11),
             )
           ],
         )),
-        InkWell(
-          onTap: () {},
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            decoration: BoxDecoration(
-                color: greenBtn,
-                borderRadius: BorderRadius.all(Radius.circular(40))),
-            child: Text(
-              "Order now",
-              style: TextStyle(fontSize: 12, color: Colors.white),
+        SizedBox(
+          width: 10,
+        ),
+        Row(
+          children: [
+            Text(
+              "Quantity",
+              style: TextStyle(fontSize: 12),
             ),
-          ),
+            SizedBox(
+              width: 4,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              decoration: BoxDecoration(
+                border: Border.all(color: black),
+              ),
+              child: Text(
+                "1",
+                style: TextStyle(fontSize: 12, color: black),
+              ),
+            ),
+          ],
         )
       ],
     );
